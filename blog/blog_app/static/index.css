@@ -1,0 +1,107 @@
+:root {
+	--background_color: #f3f3f3;
+	--main_color: #ffffff;
+	--side_color: #273129;
+	--button_def_color: #151515;
+	--button_hov_color: #404040;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background-color: var(--background_color);
+	font-family: 'Noto Sans', sans-serif;
+	color: black;
+}
+
+#kulso {
+	width: 90%;
+	margin: 50px auto;
+	display: flex;
+	flex-wrap: nowrap;
+	flex-direction: row;
+}
+
+#cikkek {
+	width: 70%;
+}
+
+#sidebar {
+	width: 30%;
+}
+
+.cikk {
+	background-color: var(--main_color);
+	padding: 20px 30px;
+	border-radius: 3px;
+	height: 156px;
+	margin-bottom: 40px;
+}
+
+.cikk_cim {
+	margin-bottom: 10px;
+}
+
+.cikk_kep {
+	float: left;
+	margin-right: 20px;
+	width: 209px;
+	height: 118px;
+}
+
+.cikk_szoveg {
+	word-wrap: break-word;
+	width: calc(100% - 229px);
+	margin-left: 229px;
+	height: 75px;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	display: -webkit-box;
+	-webkit-line-clamp: 4;
+	-webkit-box-orient: vertical;
+}
+
+.cikk_tovabb {
+	border: none;
+	background-color: var(--button_def_color);
+	padding: 5px 10px;
+	color: var(--main_color);
+	border-radius: 3px;
+	display: block;
+	margin-left: auto;
+	margin-top: 17px;
+	font-family: 'Noto Sans', sans-serif;
+}
+
+.cikk_tovabb:hover {
+	background-color: var(--button_hov_color);
+}
+
+#egyeb_cikkek, #idojaras {
+	width: calc(90% - 40px);
+	margin: 0 auto 30px auto;
+	height: 250px;
+	background-color: var(--side_color);
+	color: white;
+	border-radius: 3px;
+	padding: 20px;
+}
+
+#egyeb_cim, #idojaras_cim {
+	margin-bottom: 20px;
+}
+
+#egyeb_lista {
+	margin-left: 20px;
+}
+
+#idojaras_kep {
+	width: 150px;
+	margin: auto;
+	display: block;
+}
