@@ -36,7 +36,7 @@ body {
 	width: 30%;
 }
 
-.cikk {
+.cikk, #szerzo {
 	background-color: var(--main_color);
 	padding: 20px 30px;
 	border-radius: 3px;
@@ -59,7 +59,34 @@ body {
 	width: calc(100% - 60px);
 	font-family: 'Noto Sans', sans-serif;
 	font-size: 16px;
+	text-align: justify;
+}
 
+#szerzo_nev {
+	margin-bottom: 10px;
+	text-align: center;
+}
+
+#szerzo_kep {
+	width: 70%;
+	display: block;
+	margin: 0 auto 20px auto;
+}
+
+#szerzo_tel {
+	text-align: center;
+	font-weight: bold;
+}
+
+#szerzo_linkek {
+	display: block;
+	margin: auto;
+	text-align: center;
+}
+
+#szerzo_email, #szerzo_fb, #szerzo_insta {
+	width: 40px;
+	display: inline-block;
 }
 
 #egyeb_cikkek, #idojaras {
@@ -146,5 +173,9 @@ body {
 		width: unset;
 		margin-left: unset;
 		margin-right: unset;
+	}
+
+	#szerzo_kep {
+		width: 90%;
 	}
 }
