@@ -1,0 +1,173 @@
+:root {
+	--background_color: #f3f3f3;
+	--main_color: #ffffff;
+	--side_color: #273129;
+	--button_def_color: #151515;
+	--button_hov_color: #404040;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background-color: var(--background_color);
+	font-family: 'Noto Sans', sans-serif;
+	color: black;
+}
+
+#kulso {
+	width: 90%;
+	max-width: calc(1920px * 0.9);
+	margin: 50px auto;
+	display: flex;
+	flex-wrap: nowrap;
+	flex-direction: row;
+}
+
+#szerzok {
+	width: 70%;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+}
+
+#sidebar {
+	width: 30%;
+}
+
+.szerzo {
+	background-color: var(--main_color);
+	padding: 20px 30px;
+	border-radius: 3px;
+	margin: 0 30px 40px;
+	width: calc(50% - 120px);
+}
+
+.szerzo_nev {
+	margin-bottom: 10px;
+	text-align: center;
+}
+
+.szerzo_kep {
+	width: 70%;
+	display: block;
+	margin: 0 auto 20px auto;
+}
+
+.szerzo_tel {
+	text-align: center;
+	font-weight: bold;
+}
+
+.szerzo_linkek {
+	display: block;
+	margin: auto;
+	text-align: center;
+}
+
+.szerzo_email, .szerzo_fb, .szerzo_insta {
+	width: 40px;
+	display: inline-block;
+}
+
+#egyeb_cikkek, #idojaras {
+	width: calc(90% - 40px);
+	margin: 0 auto 30px auto;
+	height: 250px;
+	background-color: var(--side_color);
+	color: white;
+	border-radius: 3px;
+	padding: 20px;
+}
+
+#egyeb_cim, #idojaras_cim {
+	margin-bottom: 20px;
+}
+
+#egyeb_lista {
+	margin-left: 20px;
+	overflow: hidden;
+	height: 200px;
+}
+
+#egyeb_lista a {
+	color: white;
+	text-decoration: none;
+}
+
+#idojaras_kep {
+	width: 150px;
+	margin: auto;
+	display: block;
+}
+
+@media screen and (max-width: 1200px)
+{
+	#szerzok {
+		flex-direction: column;
+	}
+
+	.szerzo {
+		width: calc(100% - 120px);
+	}
+}
+
+@media screen and (max-width: 1000px)
+{
+	#kulso {
+		flex-direction: column;
+	}
+
+	#szerzok {
+		width: 100%;
+	}
+
+	#sidebar {
+		width: 100%;
+		display: flex;
+		flex-direction: row;
+		flex-wrap: nowrap;
+	}
+
+	#egyeb_cikkek {
+		width: calc(50% - 10px);
+		margin-right: 10px;
+		height: 150px;
+	}
+
+	#egyeb_lista {
+		height: 110px;
+		overflow: hidden;
+	}
+
+	#idojaras {
+		width: calc(50% - 10px);
+		margin-left: 10px;
+		height: 150px;
+	}
+
+	#idojaras_kep {
+		width: 70px;
+	}
+}
+
+@media screen and (max-width: 550px)
+{
+	.szerzo_kep {
+		width: 100%;
+	}
+
+	#sidebar {
+		flex-direction: column;
+	}
+
+	#egyeb_cikkek, #idojaras {
+		width: unset;
+		margin-left: unset;
+		margin-right: unset;
+	}
+}
