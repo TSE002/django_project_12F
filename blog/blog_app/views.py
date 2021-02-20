@@ -6,7 +6,7 @@ import pathlib
 from .models import Cikkek
 from .models import Kepek
 from .models import Admin
-from .models import Kepek_Admin
+
 
 def get_articles():
 	a = Cikkek.objects.order_by('-datum').all()
@@ -18,7 +18,7 @@ def index(request):
 	#c = Cikkek.objects.create(cim='Teszt cím2',tartalom='Teszt tartalom',datum='2020-02-18',felh_id=1)
 	#k = Kepek.objects.create(kep_hash='static/pictures/test.png',cikk_id=2)
 	l_pic = Kepek.objects.order_by('id').all()
-	a = Cikkek.objects.order_by('id').all()
+	a = Cikkek.objects.order_by('-datum').all()
 	l = []
 	for i in a:
 		f = open('blog_app/static/articles/'+i.tartalom+'.txt','r',encoding='utf-8')
@@ -38,3 +38,8 @@ def cikk(request,cid):
 	p = Kepek.objects.get(cikk_id=c.id)
 	context = {'article':c,'a_content':f.read(),'picture':p,'weather':getData(),'all_art':get_articles()}
 	return render(request,'cikk.html',context)
+
+def szerzok(request):
+	users = Admin.objects.all().order_by('nev')
+	context = {'u': users,'weather':getData(),'all_art':get_articles()}
+	return render(request,'szerzok.html',context)

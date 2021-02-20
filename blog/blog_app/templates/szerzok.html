@@ -7,51 +7,33 @@
 <body>
 	<div id="kulso">
 		<main id="szerzok">
+			{% for w in u %}
 			<article class="szerzo">
-				<h1 class="szerzo_nev">Gyúrós Petike</h1>
-				<img src="../static/pictures/test.png" class="szerzo_kep">
-				<p class="szerzo_tel">063012345678</p>
+				<h1 class="szerzo_nev">{{w.nev}}</h1>
+				<img src="../static/pictures/{{w.kep_hash}}" class="szerzo_kep">
+				<p class="szerzo_tel">{{w.tel}}</p>
 				<div class="szerzo_linkek">
-					<a href="mailto:pelda@valami.hu" class="szerzo_email_a"><img src="../static/pictures/email.png" class="szerzo_email"></a>
-					<a href="https://facebook.com/gyuros.petike" class="szerzo_fb_a"><img src="../static/pictures/fb.png" class="szerzo_fb"></a>
-					<a href="https://instagram.com/gyuros.petike" class="szerzo_insta_a"><img src="../static/pictures/insta.png" class="szerzo_insta"></a>
+					<a href="mailto:{{w.email}}" class="szerzo_email_a"><img src="../static/pictures/email.png" class="szerzo_email"></a>
+					<a href="https://facebook.com/{{w.fb}}" class="szerzo_fb_a"><img src="../static/pictures/fb.png" class="szerzo_fb"></a>
+					<a href="https://instagram.com/{{w.insta}}" class="szerzo_insta_a"><img src="../static/pictures/insta.png" class="szerzo_insta"></a>
 				</div>
 			</article>
-			<article class="szerzo">
-				<h1 class="szerzo_nev">Gyúrós Petike</h1>
-				<img src="../static/pictures/test.png" class="szerzo_kep">
-				<p class="szerzo_tel">063012345678</p>
-				<div class="szerzo_linkek">
-					<a href="mailto:pelda@valami.hu" class="szerzo_email_a"><img src="../static/pictures/email.png" class="szerzo_email"></a>
-					<a href="https://facebook.com/gyuros.petike" class="szerzo_fb_a"><img src="../static/pictures/fb.png" class="szerzo_fb"></a>
-					<a href="https://instagram.com/gyuros.petike" class="szerzo_insta_a"><img src="../static/pictures/insta.png" class="szerzo_insta"></a>
-				</div>
-			</article>
-			<article class="szerzo">
-				<h1 class="szerzo_nev">Gyúrós Petike</h1>
-				<img src="../static/pictures/test.png" class="szerzo_kep">
-				<p class="szerzo_tel">063012345678</p>
-				<div class="szerzo_linkek">
-					<a href="mailto:pelda@valami.hu" class="szerzo_email_a"><img src="../static/pictures/email.png" class="szerzo_email"></a>
-					<a href="https://facebook.com/gyuros.petike" class="szerzo_fb_a"><img src="../static/pictures/fb.png" class="szerzo_fb"></a>
-					<a href="https://instagram.com/gyuros.petike" class="szerzo_insta_a"><img src="../static/pictures/insta.png" class="szerzo_insta"></a>
-				</div>
-			</article>
+			{% endfor %}
 		</main>
 		<nav id="sidebar">
 			<div id="egyeb_cikkek">
 				<h1 id="egyeb_cim">Egyébb cikkjeim:</h1>
 				<ul id="egyeb_lista">
-					<li class="egyeb_elem">Cikk1</li>
-					<li class="egyeb_elem">Cikk2</li>
-					<li class="egyeb_elem">Cikk3</li>
+					{% for a in all_art %}
+					<a href="/cikkek/{{a.id}}"><li class="egyeb_elem">{{a.cim}}</li></a>
+					{% endfor %}
 				</ul>
 			</div>
 			<div id="idojaras">
 				<h1 id="idojaras_cim">Mai időjárás:</h1>
-				<img src="https://www.accuweather.com/images/weathericons/01.svg" id="idojaras_kep">
-				<p id="idojaras_jelleg">Napos</p>
-				<p id="idojaras_homerseklet">Hőmérséklet: <span></span></p>
+				<img src="{{weather.0}}" id="idojaras_kep">
+				<p id="idojaras_jelleg">{{weather.1}}</p>
+				<p id="idojaras_homerseklet">Hőmérséklet: <span>{{weather.2}}</span></p>
 			</div>
 		</nav>
 	</div>
