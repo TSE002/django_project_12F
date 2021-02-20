@@ -12,7 +12,7 @@
 				<h1 class="cikk_cim">{{al.article.cim}}</h1>
 				<img src="{{al.pic.kep_hash}}" class="cikk_kep">
 				<p class="cikk_szoveg">{{al.article.tartalom}}</p>
-				<button class="cikk_tovabb" onclick="">Tovább olvasom</button>
+				<button class="cikk_tovabb" onclick=" window.location.href = '/cikkek/{{al.article.id}}'; ">Tovább olvasom</button>
 			</article>
 			{% endfor %}
 		</main>
@@ -20,9 +20,9 @@
 			<div id="egyeb_cikkek">
 				<h1 id="egyeb_cim">Egyébb cikkjeim:</h1>
 				<ul id="egyeb_lista">
-					<li class="egyeb_elem">Cikk1</li>
-					<li class="egyeb_elem">Cikk2</li>
-					<li class="egyeb_elem">Cikk3</li>
+					{% for al in all_art %}
+					<a href="cikkek/{{al.id}}"><li class="egyeb_elem">{{al.cim}}</li></a>
+					{% endfor %}
 				</ul>
 			</div>
 			<div id="idojaras">

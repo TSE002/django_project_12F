@@ -8,30 +8,25 @@
 	<div id="kulso">
 		<main id="cikkek">
 			<article class="cikk">
-				<h1 class="cikk_cim">Cikk címe</h1>
-				<img src="../static/test.png" class="cikk_kep">
-				<p class="cikk_szoveg">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				<h1 class="cikk_cim">{{article.cim}}</h1>
+				<img src="../{{picture.kep_hash}}" class="cikk_kep">
+				<p class="cikk_szoveg">{{article.tartalom}}</p>
 			</article>
 		</main>
 		<nav id="sidebar">
 			<div id="egyeb_cikkek">
 				<h1 id="egyeb_cim">Egyébb cikkjeim:</h1>
 				<ul id="egyeb_lista">
-					<li class="egyeb_elem">Cikk1</li>
-					<li class="egyeb_elem">Cikk2</li>
-					<li class="egyeb_elem">Cikk3</li>
+					{% for al in all_art %}
+						<a href="cikkek/{{al.id}}"><li class="egyeb_elem">{{al.cim}}</li></a>
+					{% endfor %}
 				</ul>
 			</div>
 			<div id="idojaras">
 				<h1 id="idojaras_cim">Mai időjárás:</h1>
-				<img src="https://www.accuweather.com/images/weathericons/01.svg" id="idojaras_kep">
-				<p id="idojaras_jelleg">Napos</p>
-				<p id="idojaras_homerseklet">Hőmérséklet: <span></span></p>
+				<img src="{{weather.0}}" id="idojaras_kep">
+				<p id="idojaras_jelleg">{{weather.1}}</p>
+				<p id="idojaras_homerseklet">Hőmérséklet: <span>{{weather.2}}</span></p>
 			</div>
 		</nav>
 	</div>

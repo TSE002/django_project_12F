@@ -7,6 +7,10 @@ from .models import Kepek
 from .models import Admin
 from .models import Kepek_Admin
 
+def get_articles():
+	a = Cikkek.objects.order_by('-datum').all()
+	return a
+
 # Create your views here.
 def index(request):
 	# admin1 = Admin.objects.create(nev='admin',felhnev='admin',psw='admin',tel='admin',fb='admin',insta='admin')
@@ -22,5 +26,11 @@ def index(request):
 		for p in l:
 			if p['article'].id == o.cikk_id:
 				p['pic'] = o
-	context = {'article_content':l,'weather':getData()}
+	context = {'article_content':l,'weather':getData(),'all_art':get_articles()}
 	return render(request,'index.html',context)
+
+def cikk(request,cid):
+	c = Cikkek.objects.get(pk=cid)
+	p = Kepek.objects.get(cikk_id=c.id)
+	context = {'article':c, 'picture':p,'weather':getData(),'all_art':get_articles()}
+	return render(request,'cikk.html',context)
