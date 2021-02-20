@@ -1,0 +1,83 @@
+:root {
+	--background_color: #f3f3f3;
+	--main_color: #ffffff;
+	--side_color: #273129;
+	--button_def_color: #151515;
+	--button_hov_color: #404040;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background-color: var(--background_color);
+	font-family: 'Noto Sans', sans-serif;
+	color: black;
+}
+
+#kulso {
+	width: calc(90% - 60px);
+	max-width: 600px;
+	margin: 300px auto 0;
+	background-color: var(--main_color);
+	border-radius: 3px;
+	padding: 30px;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+}
+
+#wrong {
+	display: none;
+	background-color: red;
+	padding: 10px;
+	width: calc(100% + 40px);
+	margin-left: -30px;
+	margin-top: -30px;
+	border-top-right-radius: 3px;
+	border-top-left-radius: 3px;
+	margin-bottom: 20px;
+}
+
+#wrong_szoveg {
+	text-align: center;
+	color: white;
+}
+
+#login_cim {
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+#login_felhasznalo, #login_jelszo {
+	margin:0 auto 20px;
+	border-radius: 3px;
+	padding: 5px 10px;
+	border: 2px solid;
+	width: 70%;
+	transition: 0.3s;
+}
+
+#login_felhasznalo:focus, #login_jelszo:focus {
+	border: 2px solid var(--side_color);
+	width: 80%;
+}
+
+#login_btn {
+	border: none;
+	background-color: var(--button_def_color);
+	padding: 10px 15px;
+	color: var(--main_color);
+	border-radius: 3px;
+	display: block;
+	margin: auto;
+	font-family: 'Noto Sans', sans-serif;
+}
+
+#login_btn:hover {
+	background-color: var(--button_hov_color);
+}
