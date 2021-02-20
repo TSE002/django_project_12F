@@ -4,8 +4,17 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Az én blogom</title>
+	<link rel="stylesheet" type="text/css" href="../static/cikk_hozzadasa.css">
 </head>
 <body>
-
+	<main id="kulso">
+		<h1 id="cim">Cikk hozzáadása</h1>
+		<form id="cikk_form">
+			<input type="text" name="cim" placeholder="A cikk címe" id="cikk_cim">
+			<input type="file" name="kep" accept=".jpg, .png" id="cikk_kep">
+			<textarea id="cikk_szoveg" placeholder="A cikk tartalma"></textarea>
+			<input type="submit" name="kozzetetel" value="Közzététel" id="cikk_btn">
+		</form>
+	</main>
 </body>
 </html>
