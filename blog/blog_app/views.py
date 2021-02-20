@@ -1,8 +1,8 @@
 from django.shortcuts import render
+from django.shortcuts import redirect
 from django.template import loader
 from django.http import HttpResponse
 from blog_app.get_weather import getData
-import pathlib
 from .models import Cikkek
 from .models import Kepek
 from .models import Admin
@@ -44,3 +44,20 @@ def szerzok(request):
 	users = Admin.objects.all().order_by('nev')
 	context = {'u': users,'weather':getData(),'all_art':get_articles()}
 	return render(request,'szerzok.html',context)
+
+def login(request):
+	return render(request,'login.html')
+
+def check(request):
+	if request.method == 'POST':
+		username = request.POST['username']
+		password = request.POST['password']
+		f = Admin.objects.filter(nev=username).filter(psw=password)
+		if f:
+			return render(request,'cikk_hozzaadasa.html')
+		else:
+			return redirect('/login',permanent=True)
+	else:
+		return redirect('/login',permanent=True)
+
+

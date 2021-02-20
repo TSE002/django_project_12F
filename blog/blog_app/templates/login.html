@@ -13,9 +13,12 @@
 			<p id="wrong_szoveg">A felhasználónév vagy jelszó hibás</p>
 		</div>
 		<h1 id="login_cim">Admin oldal</h1>
-		<input type="text" name="username" id="login_felhasznalo" placeholder="Felhasználónév" autofocus>
-		<input type="password" name="password" id="login_jelszo" placeholder="Jelszó">
-		<button id="login_btn" onclick="">Belépés</button>
+		<form action="cikk_hozzaadasa" method="post">
+			{% csrf_token %}
+			<input type="text" name="username" id="login_felhasznalo" placeholder="Felhasználónév" autofocus>
+			<input type="password" name="password" id="login_jelszo" placeholder="Jelszó">
+			<input type="submit" id="login_btn" onclick="" value="Belépés">
+		</form>
 	</main>
 </body>
 </html>
