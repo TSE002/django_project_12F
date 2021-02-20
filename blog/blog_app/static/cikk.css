@@ -55,6 +55,10 @@ body {
 
 .cikk_szoveg {
 	word-wrap: break-word;
+	width: calc(100% - 60px);
+	font-family: 'Noto Sans', sans-serif;
+	font-size: 16px;
+
 }
 
 #egyeb_cikkek, #idojaras {
