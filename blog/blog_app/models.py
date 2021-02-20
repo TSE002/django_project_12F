@@ -16,9 +16,9 @@ class Admin(models.Model):
 
 class Kepek_Admin(models.Model):
 	kep_hash = models.CharField(max_length=255)
-	felh_id = models.ForeignKey(Admin,on_delete=models.CASCADE)
+	felh = models.ForeignKey(Admin,on_delete=models.CASCADE)
 	def __str__(self):
-		s = str(self.id) + ' ' + self.kep_hash + ' ' + str(self.felh_id)
+		s = str(self.id) + ' ' + self.kep_hash + ' '
 		return s
 
 
@@ -26,17 +26,17 @@ class Cikkek(models.Model):
 	cim = models.CharField(max_length=255)
 	tartalom = models.CharField(max_length=32768)
 	datum = models.DateField()
-	felh_id = models.ForeignKey(Admin,on_delete=models.CASCADE)
+	felh = models.ForeignKey(Admin,on_delete=models.CASCADE)
 	def __str__(self):
-		s = str(self.id) + ' ' + self.cim + ' ' + self.datum + ' ' + str(felh_id)
+		s = str(self.id) + ' ' + self.cim + ' ' + str(self.datum) + ' '
 		return s
 
 
 class Kepek(models.Model):
 	kep_hash = models.CharField(max_length=255)
-	cikk_id = models.ForeignKey(Cikkek,on_delete=models.CASCADE)
+	cikk = models.ForeignKey(Cikkek,on_delete=models.CASCADE)
 	def __str__(self):
-		s = str(self.id) + ' ' + self.kep_hash + ' ' + str(self.cikk_id)
+		s = str(self.id) + ' ' + self.kep_hash + ' ' + str(self.cikk)
 		return s
 
 
