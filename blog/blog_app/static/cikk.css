@@ -73,6 +73,13 @@ body {
 
 #egyeb_lista {
 	margin-left: 20px;
+	overflow: hidden;
+	height: 200px;
+}
+
+#egyeb_lista a {
+	color: white;
+	text-decoration: none;
 }
 
 #idojaras_kep {
