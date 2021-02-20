@@ -59,7 +59,7 @@ body {
 	width: calc(100% - 60px);
 	font-family: 'Noto Sans', sans-serif;
 	font-size: 16px;
-
+	text-align: justify;
 }
 
 #egyeb_cikkek, #idojaras {
