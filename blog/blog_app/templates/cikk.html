@@ -9,8 +9,8 @@
 		<main id="cikkek">
 			<article class="cikk">
 				<h1 class="cikk_cim">{{article.cim}}</h1>
-				<img src="../{{picture.kep_hash}}" class="cikk_kep">
-				<p class="cikk_szoveg">{{article.tartalom}}</p>
+				<img src="../static/pictures/{{picture.kep_hash}}" class="cikk_kep">
+				<pre class="cikk_szoveg">{{a_content}}</pre>
 			</article>
 		</main>
 		<nav id="sidebar">
@@ -18,7 +18,7 @@
 				<h1 id="egyeb_cim">Egyébb cikkjeim:</h1>
 				<ul id="egyeb_lista">
 					{% for al in all_art %}
-						<a href="cikkek/{{al.id}}"><li class="egyeb_elem">{{al.cim}}</li></a>
+						<a href="{{al.id}}"><li class="egyeb_elem">{{al.cim}}</li></a>
 					{% endfor %}
 				</ul>
 			</div>
