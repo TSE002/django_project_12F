@@ -54,6 +54,7 @@ body {
 }
 
 .cikk_szoveg {
+	white-space: pre-wrap;
 	word-wrap: break-word;
 	width: calc(100% - 60px);
 	font-family: 'Noto Sans', sans-serif;
