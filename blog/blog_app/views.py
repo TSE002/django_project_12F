@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.template import loader
 from django.http import HttpResponse
+from blog_app.get_weather import getData
 from .models import Cikkek
 from .models import Kepek
 from .models import Admin
@@ -21,5 +22,5 @@ def index(request):
 		for p in l:
 			if p['article'].id == o.cikk_id:
 				p['pic'] = o
-	context = {'article_content':l}
+	context = {'article_content':l,'weather':getData()}
 	return render(request,'index.html',context)
