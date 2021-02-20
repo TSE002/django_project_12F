@@ -15,13 +15,13 @@
 				<pre class="cikk_szoveg">{{a_content}}</pre>
 			</article>
 			<article id="szerzo">
-				<h1 id="szerzo_nev">Gyúrós Petike</h1>
-				<img src="../static/pictures/test.png" id="szerzo_kep">
-				<p id="szerzo_tel">063012345678</p>
+				<h1 id="szerzo_nev">{{wrtier.nev}}</h1>
+				<img src="../static/pictures/{{writer.kep_hash}}" id="szerzo_kep">
+				<p id="szerzo_tel">{{writer.tel}}</p>
 				<div id="szerzo_linkek">
-					<a href="mailto:pelda@valami.hu" id="szerzo_email_a"><img src="../static/pictures/email.png" id="szerzo_email"></a>
-					<a href="https://facebook.com/gyuros.petike" id="szerzo_fb_a"><img src="../static/pictures/fb.png" id="szerzo_fb"></a>
-					<a href="https://instagram.com/gyuros.petike" id="szerzo_insta_a"><img src="../static/pictures/insta.png" id="szerzo_insta"></a>
+					<a href="mailto:{{writer.email}}" id="szerzo_email_a"><img src="../static/pictures/email.png" id="szerzo_email"></a>
+					<a href="{{writer.fb}}" id="szerzo_fb_a"><img src="../static/pictures/fb.png" id="szerzo_fb"></a>
+					<a href="{{writer.insta}}" id="szerzo_insta_a"><img src="../static/pictures/insta.png" id="szerzo_insta"></a>
 				</div>
 			</article>
 		</main>

@@ -36,7 +36,8 @@ def cikk(request,cid):
 	c = Cikkek.objects.get(pk=cid)
 	f = open('blog_app/static/articles/'+c.tartalom+".txt","r",encoding='utf-8')
 	p = Kepek.objects.get(cikk_id=c.id)
-	context = {'article':c,'a_content':f.read(),'picture':p,'weather':getData(),'all_art':get_articles()}
+	u = Admin.objects.get(pk=c.felh_id)
+	context = {'article':c,'a_content':f.read(),'picture':p,'weather':getData(),'all_art':get_articles(),'writer':u}
 	return render(request,'cikk.html',context)
 
 def szerzok(request):
