@@ -56,7 +56,7 @@ def check(request):
 	if request.method == 'POST':
 		username = request.POST['username']
 		password = request.POST['password']
-		f = Admin.objects.filter(nev=username).filter(psw=password)
+		f = Admin.objects.filter(felhnev=username).filter(psw=password)
 		if f:
 			context = {'user_id':f}
 			return render(request,'cikk_hozzaadasa.html',context)
