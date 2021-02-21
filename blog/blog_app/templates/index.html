@@ -5,8 +5,16 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Az én blogom</title>
 	<link rel="stylesheet" type="text/css" href="../static/index.css">
+	<link rel="stylesheet" type="text/css" href="../static/header.css">
 </head>
 <body>
+	<header id="header_kulso">
+		<a href="/index" id="header_logo_link"><img src="../static/pictures/logo.PNG" id="header_logo"></a>
+		<div id="header_linkek">
+			<a href="/index" class="header_link" id="header_cikkek"><p class="header_p">Cikkek</p></a>
+			<a href="/szerzok" class="header_link" id="header_szerzok"><p class="header_p">Szerzők</p></a>
+		</div>
+	</header>
 	<div id="kulso">
 		<main id="cikkek">
 			{% for al in article_content %}

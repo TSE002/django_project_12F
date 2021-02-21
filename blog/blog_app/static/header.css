@@ -1,0 +1,58 @@
+#header_kulso {
+	color: white;
+	position: fixed;
+	margin-top: -50px;
+	width: 100%;
+	height: 40px;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	background-color: var(--side_color);
+}
+
+#header_logo_link {
+	display: block;
+	margin: 5px auto 5px 10px;
+}
+
+#header_logo {
+	width: 170px;
+	margin-top: -20px;
+}
+
+#header_linkek {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+}
+
+.header_link {
+	text-decoration: none;
+	color: white;
+	margin: 5px 10px;
+	font-size: 23px;
+}
+
+#header_szerzok {
+	margin-right: 28px;
+}
+
+@media screen and (max-width: 400px)
+{
+	#header_kulso {
+		height: 80px;
+		flex-direction: column;
+	}
+
+	#header_logo_link {
+		margin-left: auto;
+	}
+
+	#header_linkek {
+		margin: -20px auto 0;
+	}
+
+	#header_szerzok {
+		margin-right: 10px;
+	}
+}
