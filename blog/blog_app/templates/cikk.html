@@ -19,12 +19,12 @@
 		<main id="cikkek">
 			<article class="cikk">
 				<h1 class="cikk_cim">{{article.cim}}</h1>
-				<img src="../media/pictures/{{picture.kep_hash}}" class="cikk_kep">
+				<img src="../media/pictures/{{picture.kep_hash}}" alt="{{picture.kep_hash}}" class="cikk_kep">
 				<pre class="cikk_szoveg">{{a_content}}</pre>
 			</article>
 			<article id="szerzo">
 				<h1 id="szerzo_nev">{{wrtier.nev}}</h1>
-				<img src="../media/writers/{{writer.kep_hash}}" id="szerzo_kep">
+				<img src="../media/writers/{{writer.kep_hash}}" alt="A szerző képe" id="szerzo_kep">
 				<p id="szerzo_tel">{{writer.tel}}</p>
 				<div id="szerzo_linkek">
 					<a href="mailto:{{writer.email}}" id="szerzo_email_a"><img src="../static/pictures/email.png" id="szerzo_email"></a>
