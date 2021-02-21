@@ -23,8 +23,8 @@
 		<h1 id="login_cim">Admin oldal</h1>
 		<form id="login_form" action="cikk_hozzaadasa" method="post">
 			{% csrf_token %}
-			<input type="text" name="username" id="login_felhasznalo" placeholder="Felhasználónév" autofocus>
-			<input type="password" name="password" id="login_jelszo" placeholder="Jelszó">
+			<input type="text" name="username" id="login_felhasznalo" placeholder="Felhasználónév" maxlength="255" autofocus>
+			<input type="password" name="password" id="login_jelszo" placeholder="Jelszó" maxlength="255">
 			<input type="submit" id="login_btn" onclick="" value="Belépés">
 		</form>
 	</main>
