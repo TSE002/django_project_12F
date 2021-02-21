@@ -20,12 +20,12 @@
 			{% for w in u %}
 			<article class="szerzo">
 				<h1 class="szerzo_nev">{{w.nev}}</h1>
-				<img src="../static/pictures/{{w.kep_hash}}" class="szerzo_kep">
+				<img src="media/writers/{{w.kep_hash}}" class="szerzo_kep">
 				<p class="szerzo_tel">{{w.tel}}</p>
 				<div class="szerzo_linkek">
 					<a href="mailto:{{w.email}}" class="szerzo_email_a"><img src="../static/pictures/email.png" class="szerzo_email"></a>
-					<a href="https://facebook.com/{{w.fb}}" class="szerzo_fb_a"><img src="../static/pictures/fb.png" class="szerzo_fb"></a>
-					<a href="https://instagram.com/{{w.insta}}" class="szerzo_insta_a"><img src="../static/pictures/insta.png" class="szerzo_insta"></a>
+					<a href="{{w.fb}}" class="szerzo_fb_a"><img src="../static/pictures/fb.png" class="szerzo_fb"></a>
+					<a href="{{w.insta}}" class="szerzo_insta_a"><img src="../static/pictures/insta.png" class="szerzo_insta"></a>
 				</div>
 			</article>
 			{% endfor %}

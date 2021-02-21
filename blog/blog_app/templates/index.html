@@ -20,7 +20,7 @@
 			{% for al in article_content %}
 			<article class="cikk">
 				<h1 class="cikk_cim">{{al.article.cim}}</h1>
-				<img src="../static/pictures/{{al.pic.kep_hash}}" class="cikk_kep">
+				<img src="/media/pictures/{{al.pic.kep_hash}}" class="cikk_kep">
 				<p class="cikk_szoveg">{{al.content}}</p>
 				<button class="cikk_tovabb" onclick=" window.location.href = '/cikkek/{{al.article.id}}'; ">Tovább olvasom</button>
 			</article>
