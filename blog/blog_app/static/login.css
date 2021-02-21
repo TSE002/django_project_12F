@@ -53,8 +53,12 @@ body {
 	margin-bottom: 20px;
 }
 
+#login_form {
+	text-align: center;
+}
+
 #login_felhasznalo, #login_jelszo {
-	margin:0 auto 20px;
+	margin: 0 auto 20px;
 	border-radius: 3px;
 	padding: 5px 10px;
 	border: 2px solid;

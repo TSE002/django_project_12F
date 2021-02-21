@@ -13,7 +13,7 @@
 			<p id="wrong_szoveg">A felhasználónév vagy jelszó hibás</p>
 		</div>
 		<h1 id="login_cim">Admin oldal</h1>
-		<form action="cikk_hozzaadasa" method="post">
+		<form id="login_form" action="cikk_hozzaadasa" method="post">
 			{% csrf_token %}
 			<input type="text" name="username" id="login_felhasznalo" placeholder="Felhasználónév" autofocus>
 			<input type="password" name="password" id="login_jelszo" placeholder="Jelszó">
