@@ -10,9 +10,10 @@
 	<main id="kulso">
 		<h1 id="cim">Cikk hozzáadása</h1>
 		<form id="cikk_form">
+			{% csrf_token %}
 			<input type="text" name="cim" placeholder="A cikk címe" id="cikk_cim">
 			<input type="file" name="kep" accept=".jpg, .png" id="cikk_kep">
-			<textarea id="cikk_szoveg" placeholder="A cikk tartalma"></textarea>
+			<textarea id="cikk_szoveg" name=tartalom placeholder="A cikk tartalma"></textarea>
 			<input type="submit" name="kozzetetel" value="Közzététel" id="cikk_btn">
 		</form>
 	</main>
