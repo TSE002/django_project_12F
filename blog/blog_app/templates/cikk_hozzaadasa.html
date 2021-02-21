@@ -10,11 +10,12 @@
 <body>
 	<main id="kulso">
 		<h1 id="cim">Cikk hozzáadása</h1>
-		<form id="cikk_form" enctype="multipart/form-data">
+		<form id="cikk_form" action="up_handler" enctype="multipart/form-data" method="post">
 			{% csrf_token %}
 			<input type="text" name="cim" placeholder="A cikk címe" id="cikk_cim">
-			<button id="cikk_kep_btn">Kép feltöltése</button>
+			<input type="button" id="cikk_kep_btn" value="Kép feltöltése">
 			<input type="file" name="kep" accept=".jpg, .png" id="cikk_kep">
+			<input type="hidden" name="user_id" value="{{user_id.0.id}}">
 			<textarea id="cikk_szoveg" name=tartalom placeholder="A cikk tartalma"></textarea>
 			<input type="submit" name="kozzetetel" value="Közzététel" id="cikk_btn">
 		</form>
