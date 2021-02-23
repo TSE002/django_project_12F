@@ -6,28 +6,30 @@
 	<title>Az én blogom</title>
 	<link rel="stylesheet" type="text/css" href="../static/index.css">
 	<link rel="stylesheet" type="text/css" href="../static/header.css">
+	<link rel="stylesheet" type="text/css" href="../static/footer.css">
 </head>
 <body>
 	<header id="header_kulso">
 		<a href="/" id="header_logo_link"><img src="../static/pictures/logo.PNG" id="header_logo"></a>
 		<div id="header_linkek">
-			<a href="/" class="header_link" id="header_cikkek"><p class="header_p">Cikkek</p></a>
+			<a href="/" class="header_link" id="header_cikkek"><p class="header_p" style="color: #d96767;">Cikkek</p></a>
 			<a href="/szerzok" class="header_link" id="header_szerzok"><p class="header_p">Szerzők</p></a>
 		</div>
 	</header>
 	<div id="kulso">
 		<main id="cikkek">
 			{% if article_content %}
+			<h1>Cikkek:</h1>
 			{% for al in article_content %}
 			<article class="cikk">
-				<h1 class="cikk_cim">{{al.article.cim}}</h1>
+				<h2 class="cikk_cim">{{al.article.cim}}</h2>
 				<img src="/media/pictures/{{al.pic.kep_hash}}" alt="{{al.pic.kep_hash}}" class="cikk_kep">
 				<p class="cikk_szoveg">{{al.content}}</p>
 				<button class="cikk_tovabb" onclick=" window.location.href = '/cikkek/{{al.article.id}}'; ">Tovább olvasom</button>
 			</article>
 			{% endfor %}
 			{% else %}
-				<p>Nincs betölthető cikk</p>
+				<h1>Nincs betölthető cikk</h1>
 			{% endif %}
 		</main>
 		<aside id="sidebar">
