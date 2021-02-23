@@ -22,6 +22,9 @@ class Cikkek(models.Model):
 	def __str__(self):
 		s = str(self.id) + ' ' + self.cim + ' ' + str(self.datum) + ' '
 		return s
+	def get_articles(self):
+		all_article = self.objects.order_by('-datum').all()
+		return all_article
 
 
 class Kepek(models.Model):

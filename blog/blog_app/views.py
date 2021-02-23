@@ -11,16 +11,9 @@ from .models import Kepek
 from .models import Admin
 import datetime
 
-
-def get_articles():
-	a = Cikkek.objects.order_by('-datum').all()
-	return a
-
 # Create your views here.
+
 def index(request):
-	# admin1 = Admin.objects.create(nev='admin',felhnev='admin',psw='admin',tel='admin',fb='admin',insta='admin')
-	#c = Cikkek.objects.create(cim='Teszt cím2',tartalom='Teszt tartalom',datum='2020-02-18',felh_id=1)
-	#k = Kepek.objects.create(kep_hash='static/pictures/test.png',cikk_id=2)
 	l_pic = Kepek.objects.order_by('id').all()
 	a = Cikkek.objects.order_by('-datum').all()
 	l = []
@@ -33,7 +26,7 @@ def index(request):
 			if p['article'].id == o.cikk_id:
 				p['pic'] = o
 	
-	context = {'article_content':l,'weather':getData(),'all_art':get_articles()}
+	context = {'article_content':l,'weather':getData(),'all_art':Cikkek.get_articles(Cikkek)}
 	return render(request,'index.html',context)
 
 def cikk(request,cid):
@@ -41,12 +34,12 @@ def cikk(request,cid):
 	f = open(c.tartalom,"r",encoding='utf-8')
 	p = Kepek.objects.get(cikk_id=c.id)
 	u = Admin.objects.get(pk=c.felh_id)
-	context = {'article':c,'a_content':f.read(),'picture':p,'weather':getData(),'all_art':get_articles(),'writer':u}
+	context = {'article':c,'a_content':f.read(),'picture':p,'weather':getData(),'all_art':Cikkek.get_articles(Cikkek),'writer':u}
 	return render(request,'cikk.html',context)
 
 def szerzok(request):
 	users = Admin.objects.all().order_by('nev')
-	context = {'u': users,'weather':getData(),'all_art':get_articles()}
+	context = {'u': users,'weather':getData(),'all_art':Cikkek.get_articles(Cikkek)}
 	return render(request,'szerzok.html',context)
 
 def login(request):
