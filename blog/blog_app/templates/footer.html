@@ -7,3 +7,20 @@
 		<section class="footer_nev">Pálfi Bence</section>
 	</div>
 </footer>
+<script>
+    let footer_div = document.getElementById('footer_kulso');
+    const footer_pos = async function()
+    {
+        if(footer_div['style']['position'] == '' && document.documentElement.offsetHeight < window.innerHeight)
+        {
+            footer_div['style']['position'] = 'fixed';
+        }
+        else if(document.documentElement.offsetHeight + footer_div.offsetHeight >= window.innerHeight)
+        {
+            footer_div['style']['position'] = '';
+        }
+        footer_div['style']['visibility'] = 'visible';
+    }
+    window.addEventListener('load', footer_pos);
+    window.addEventListener('resize', footer_pos);
+</script>
