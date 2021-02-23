@@ -26,22 +26,22 @@
 			</article>
 			{% endfor %}
 		</main>
-		<nav id="sidebar">
-			<div id="egyeb_cikkek">
+		<aside id="sidebar">
+			<nav id="egyeb_cikkek">
 				<h1 id="egyeb_cim">Egyébb cikkjeim:</h1>
 				<ul id="egyeb_lista">
 					{% for al in all_art %}
 					<a href="cikkek/{{al.id}}"><li class="egyeb_elem">{{al.cim}}</li></a>
 					{% endfor %}
 				</ul>
-			</div>
+			</nav>
 			<div id="idojaras">
 				<h1 id="idojaras_cim">Mai időjárás:</h1>
 				<img src="{{weather.0}}" id="idojaras_kep">
 				<p id="idojaras_jelleg">{{weather.1}}</p>
 				<p id="idojaras_homerseklet">Hőmérséklet: <span>{{weather.2}}</span></p>
 			</div>
-		</nav>
+		</aside>
 	</div>
 </body>
 </html>
