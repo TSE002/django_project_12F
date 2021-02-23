@@ -17,6 +17,7 @@
 	</header>
 	<div id="kulso">
 		<main id="cikkek">
+			{% if article_content %}
 			{% for al in article_content %}
 			<article class="cikk">
 				<h1 class="cikk_cim">{{al.article.cim}}</h1>
@@ -25,6 +26,9 @@
 				<button class="cikk_tovabb" onclick=" window.location.href = '/cikkek/{{al.article.id}}'; ">Tovább olvasom</button>
 			</article>
 			{% endfor %}
+			{% else %}
+				<p>Nincs betölthető cikk</p>
+			{% endif %}
 		</main>
 		<aside id="sidebar">
 			<nav id="egyeb_cikkek">
